@@ -1,0 +1,50 @@
+\item \points{3a}
+
+
+Many uses of constraint satisfaction in real-world scenarios involve assignment of
+resources to entities, like assigning packages to different trucks to optimize delivery.
+However, when the agents are people, the issue of fair division arises.
+In this question, you will consider the ethics of what constraints to remove in a CSP
+when the CSP is unsatisfiable.\\
+
+
+Medical residents are often scheduled to work long shifts with insufficient rest,
+leading to exhaustion and burnout. This can negatively affect the residents and potentially
+lead to mistakes that also negatively affect the patients in their care \footnote{\href{https://knowledgeplus.nejm.org/blog/resident-burnout-well-being/}{Akresh-Gonzales et al. Resident Burnout and Well-Being: A Q\&A with Educator Benjamin R. Doolittle, MD}}.
+A hospital could use a constraint-satisfaction approach to try to create a work schedule
+that respects the “on-call night, day-off, rest period, and total work-hour regulations
+mandated by the Accreditation Council for Graduate Medical Education, as well as the number
+of residents needed each hour given the demand (aka number of patients and
+procedures scheduled) \footnote{\href{https://www.sciencedirect.com/science/article/abs/pii/S0305054810001024}{Topaloglu et al. A constraint programming-based solution approach for medical resident scheduling problems. Computers \& Operations Research. 2011.}}.
+The constraints are:\\
+
+\begin{enumerate}[1]
+    \item One day off every 7 days
+    \item Minimum 8 hour rest period between shifts
+    \item  No more than 80 hours of work per week averaged over a 4 week period
+    \item At least 14 hours free of clinical work and education after 24 hours of in-house call
+    \item Number of residents needed each hour
+\end{enumerate}
+
+Let’s assume for a given hospital that the constraints listed above were collectively
+\textbf{unsatisfiable} given the number of residents assigned to that hospital.
+However, its formulation as an unsatisfiable CSP depends on other factors remaining fixed, such as\\
+
+\begin{enumerate}[A]
+    \item The number of total residents
+    \item The work to be performed by residents as opposed to other staff
+    \item The budget available to hire residents or other staff
+\end{enumerate}
+
+In this case, would you remove one of the numbered constraints 1-5 or
+advocate that the hospital administration change one of A-C to make the problem solveable?
+If so, explain which one and give a reason why.\\
+
+\textbf{What we expect:} In 2-4 sentences, you must explicitly state which numbered constraint or lettered factor you would change and justify your choice with a reason that
+explains why you chose that one.\\
+
+
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_3a(.*?)% <SCPD_SUBMISSION_TAG>_3a', f.read(), re.DOTALL)).group(1))
+🐍
