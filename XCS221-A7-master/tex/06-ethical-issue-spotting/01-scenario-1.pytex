@@ -1,0 +1,8 @@
+\item \points{6a}
+
+An investment firm develops a simple machine learning model to predict whether an individual is likely to default on a loan from a variety of factors, including location, age, credit score, and public record. After looking through their results, you find that the model predicts mainly based on location and that the model mainly accepts loans from urban centers and denies loans from rural applicants \footnote{\href{https://www.kaggle.com/c/loan-default-prediction/data}{Imperial College London. Loan Default Prediction Dataset. 2014.}}. Furthermore, looking at the gender and ethnicity of the applicants, you find that the model has a significantly higher false positive rate for Black and male applicants than for other groups. In a false positive prediction, a model misclassifies someone who does not default as likely to default.\\
+
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_6a(.*?)% <SCPD_SUBMISSION_TAG>_6a', f.read(), re.DOTALL)).group(1))
+🐍

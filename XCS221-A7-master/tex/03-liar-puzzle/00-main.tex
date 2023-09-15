@@ -1,0 +1,39 @@
+\item {\bf Liar Puzzle}
+
+Someone crashed the server, and accusations are flying.  For this problem, we
+will encode the evidence in first-order logic formulas to find out who crashed
+the server. You've narrowed it down to four suspects: John, Susan, Mark, and
+Nicole. You have the following information:
+\begin{itemize}
+   \item John says: ``It wasn't me!''
+   \item Susan says: ``It was Nicole!''
+   \item Mark says: ``No, it was Susan!''
+   \item Nicole says: ``Susan's a liar.''
+   \item You know that exactly one person is telling the truth.
+   \item You also know exactly one person crashed the server.
+\end{itemize}
+
+\begin{enumerate}
+
+  \input{03-liar-puzzle/01-liar}
+
+\end{enumerate}
+
+You can test your code using the following commands:
+
+\begin{lstlisting}
+python grader.py 3a-0-basic
+python grader.py 3a-1-basic
+python grader.py 3a-2-basic
+python grader.py 3a-3-basic
+python grader.py 3a-4-basic
+python grader.py 3a-5-basic
+python grader.py 3a-all-basic  # Tests the conjunction of all the formulas
+\end{lstlisting}
+
+To solve the puzzle and find the answer, |tell| the formulas to the knowledge
+base and |ask| the query\\
+|CrashedServer(`$x')|, by running:
+\begin{lstlisting}
+python grader.py 3a-run-basic
+\end{lstlisting}

@@ -1,0 +1,8 @@
+\item \points{6b}
+
+Stylometry is a way of predicting the author of contested or anonymous text by analyzing the writing patterns in the anonymous text and other texts written by the potential authors. Recently, highly accurate machine learning algorithms have been developed for this task. While these models are typically used to analyze historical documents and literature, they could be used for deanonymizing a wide range of texts, including code \footnote{\href{https://dl.acm.org/doi/10.5555/2831143.2831160}{Caliskan-Islam et. al. De-anonymizing programmers via code stylometry. 2015.}}.\\
+
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_6b(.*?)% <SCPD_SUBMISSION_TAG>_6b', f.read(), re.DOTALL)).group(1))
+🐍

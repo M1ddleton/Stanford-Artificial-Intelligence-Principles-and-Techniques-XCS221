@@ -1,0 +1,19 @@
+\item \points{4a}
+Fill out |ints()| to construct six formulas for each of the constraints.  The
+consequence has been filled out for you (|query| in the code). You can test your
+code using the following commands:
+\begin{lstlisting}
+python grader.py 4a-0-basic
+python grader.py 4a-1-basic
+python grader.py 4a-2-basic
+python grader.py 4a-3-basic
+python grader.py 4a-4-basic
+python grader.py 4a-5-basic
+python grader.py 4a-all-basic  # Tests the conjunction of all the formulas
+\end{lstlisting}
+
+To finally prove the theorem, |tell| the formulas to the knowledge base and
+|ask| the query by running model checking (on a finite model):
+\begin{lstlisting}
+python grader.py 4a-all-basic
+\end{lstlisting}

@@ -1,0 +1,39 @@
+\item {\bf Semantic Parsing}
+
+Semantic parsing is the task of converting natural lanugage utterances into
+first-order logic formulas. We have created a small set of grammar rules in the
+code for you in |createBaseEnglishGrammar()|. In this problem, you will add
+additional grammar rules to handle a wider variety of sentences. Specifically,
+create a |GrammarRule| for each of the following sentence structures.
+
+\begin{enumerate}
+
+  \input{05-semantic-parsing/01-every-person}
+
+  \input{05-semantic-parsing/02-some-cat}
+
+  \input{05-semantic-parsing/03-former-feeds-latter}
+
+\end{enumerate}
+
+After implementing these functions, you should be able to try some simple
+queries using |nli.py|! For example:
+\begin{lstlisting}
+(XCS221) $ python nli.py
+============================================================
+Hello!  Talk to me in English.
+Tell me something new (end the sentence with '.') or ask me a question (end the sentence with '?').
+Type 'help' for additional commands.
+------------------------------
+> Every person likes some cat.
+
+>>>>> I learned something.
+------------------------------
+> Every cat is a mammal.
+
+>>>>> I learned something.
+------------------------------
+> Every person likes some mammal?
+
+>>>>> Yes.
+\end{lstlisting}

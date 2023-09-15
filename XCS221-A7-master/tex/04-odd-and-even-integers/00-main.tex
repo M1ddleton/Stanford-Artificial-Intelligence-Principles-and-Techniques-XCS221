@@ -1,0 +1,30 @@
+\item {\bf Odd and Even Integers}
+
+In this problem, we will see how to use logic to automatically prove
+mathematical theorems.  We will focus on encoding the theorem and leave the
+proving part to the logical inference algorithm. Here is the theorem:
+
+If the following constraints hold:
+\begin{enumerate}[label=\arabic*., itemsep=0em]
+   \item Each number $x$ has exactly one successor, which is not equal to $x$.
+   \item Each number is either odd or even, but not both.
+   \item The successor of an even number is odd.
+   \item The successor of an odd number is even.
+   \item For every number $x$, the successor of $x$ is larger than $x$.
+   \item Larger is a transitive property: if $x$ is larger than $y$ and $y$ is
+        larger than $z$, then $x$ is larger than $z$.
+\end{enumerate}
+Then we have the following consequence:
+\begin{itemize}
+  \item For each number, there is an even number larger than it.
+\end{itemize}
+
+{\em Note: in this problem, "larger than" is just an arbitrary relation, and you
+should not assume it has any prior meaning.  In other words, don't assume things
+like ``a number can't be larger than itself'' unless explicitly stated.}
+
+\begin{enumerate}
+
+  \input{04-odd-and-even-integers/01-constraints}
+
+\end{enumerate}

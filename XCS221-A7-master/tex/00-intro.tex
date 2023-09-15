@@ -1,0 +1,119 @@
+{\bf Introduction}
+
+In this assignment, you will get some hands-on experience with logic. You'll see
+how logic can be used to represent the meaning of natural language sentences,
+and how it can be used to solve puzzles and prove theorems. Most of this
+assignment will be translating English into logical formulas, but in Problem 4,
+you will delve into the mechanics of logical inference.
+
+To get started, launch a Python shell and try typing the following commands to
+add logical expressions into the knowledge base.
+
+\begin{lstlisting}
+(XCS221) $ python
+Python 3.6.9
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from logic import *
+>>> Rain = Atom(`Rain')           # Shortcut
+>>> Wet = Atom(`Wet')             # Shortcut
+>>> kb = createResolutionKB()     # Create the knowledge base
+>>> kb.ask(Wet)                   
+I don't know.
+>>> kb.ask(Not(Wet))              
+I don't know.
+>>> kb.tell(Implies(Rain, Wet))   
+I learned something.
+>>> kb.ask(Wet)                   
+I don't know.
+>>> kb.tell(Rain)                 
+I learned something.
+>>> kb.tell(Wet)                  
+I already knew that.
+>>> kb.ask(Wet)                   
+Yes.
+>>> kb.ask(Not(Wet))              
+No.
+>>> kb.tell(Not(Wet))             
+I don't buy that.
+\end{lstlisting}
+
+To print out the contents of the knowledge base, you can call |kb.dump()|.
+For the example above, you get:
+\begin{lstlisting}
+==== Knowledge base [3 derivations] ===
+* Or(Not(Rain),Wet)
+* Rain
+- Wet
+\end{lstlisting}
+
+In the output, `*' means the fact was explicitly added by the user, and `-'
+means that it was inferred.
+
+Here is a table that describes how logical formulas are represented in code.
+Use it as a reference guide:
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{ p{4cm} p{5cm} p{7.5cm}}
+  {\bf Name} & {\bf Mathematical Notation} & {\bf Code} \\
+  \hline
+  Constant symbol &
+  $\text{stanford}$ &
+  |Constant(`stanford')| (must be lowercase)\\
+  \hline
+
+  Variable symbol &
+  $x$ &
+  |Variable(`$x')| (must be lowercase)\\
+  \hline
+
+  Atomic formula (atom) &
+  $\text{Rain}$\newline\newline
+  $\text{LocatedIn}(\text{stanford}, x)$ &
+  |Atom(`Rain')|\newline
+  (predicate must be uppercase)\newline
+  |Atom(`LocatedIn',`stanford',`$x')| \newline
+  (arguments are symbols)\\
+  \hline
+
+  Negation &
+  $\neg \text{Rain}$ &
+  |Not(Atom(`Rain'))| \\
+  \hline
+
+  Conjunction &
+  $\text{Rain} \wedge \text{Snow}$ &
+  |And(Atom(`Rain'), Atom(`Snow'))| \\
+  \hline
+
+  Disjunction &
+  $\text{Rain} \vee \text{Snow}$ &
+  |Or(Atom(`Rain'), Atom(`Snow'))| \\
+  \hline
+
+  Implication &
+  $\text{Rain} \to \text{Wet}$ &
+  |Implies(Atom(`Rain'), Atom(`Wet'))| \\
+  \hline
+
+  Equivalence &
+  $\text{Rain} \leftrightarrow \text{Wet}$ \newline
+  (syntactic sugar for: \newline
+  $\text{Rain} \to \text{Wet} \wedge \text{Wet} \to \text{Rain}$) &
+  |Equiv(Atom(`Rain'), Atom(`Wet'))| \\
+  \hline
+
+  Existential quantification &
+  $\exists x . \text{LocatedIn}(\text{stanford}, x)$ &
+  |Exists(`$x', Atom(`LocatedIn', `stanford', `$x'))| \\
+  \hline
+
+  Universal quantification &
+  $\forall x . \text{MadeOfAtoms}(x)$ &
+  |Forall(`$x', Atom(`MadeOfAtoms', `$x'))| \\
+  \hline
+\end{tabular}
+
+The operations |And| and |Or| only take two arguments. If we want to take a
+conjunction or disjunction of more than two, use |AndList| and |OrList|. For
+example: |AndList([Atom(`A'), Atom(`B'), Atom(`C')])| is equivalent to
+|And(And(Atom(`A'), Atom(`B')), Atom(`C'))|.

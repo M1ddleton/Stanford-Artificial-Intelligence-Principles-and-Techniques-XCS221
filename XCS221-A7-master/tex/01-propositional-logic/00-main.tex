@@ -1,0 +1,41 @@
+\item {\bf Propositional Logic}
+
+Write a propositional logic formula for each of the following English sentences
+in the given function in |submission.py|. For example, if the sentence is
+{\em ''If it is raining, it is wet''}, then you would write
+|Implies(Atom('Rain'), Atom('Wet'))|, which would be $\text{Rain} \to
+\text{Wet}$ in symbols (see |examples.py|).
+
+{\em Note: Don't forget to return the constructed formula!}
+
+\begin{enumerate}
+
+  \input{01-propositional-logic/01-summer}
+
+  \input{01-propositional-logic/02-sprinklers}
+
+  \input{01-propositional-logic/03-day-or-night}
+
+\end{enumerate}
+
+You can run the following command to test each formula:
+\begin{lstlisting}
+python grader.py 1a-0-basic
+\end{lstlisting}
+
+If your formula is wrong, then the grader will provide a counterexample, which
+is a model that your formula and the correct formula don't agree on. For
+example, if you accidentally wrote |And(Atom('Rain'), Atom('Wet'))| for
+{\em ``If it is raining, it is wet''}, then the grader would output the
+following:
+\begin{lstlisting}
+Your formula (And(Rain,Wet)) says the following model is FALSE, but it should be TRUE:
+* Rain = False
+* Wet = True
+* (other atoms if any) = False
+\end{lstlisting}
+
+In this model, it is not raining and it is wet, which satisfies the correct
+formula $\text{Rain} \to \text{Wet}$ (|TRUE|), but does not satisfy the
+incorrect formula $\text{Rain} \wedge \text{Wet}$ (|FALSE|). Use these
+counterexamples to guide you in the rest of the assignment.

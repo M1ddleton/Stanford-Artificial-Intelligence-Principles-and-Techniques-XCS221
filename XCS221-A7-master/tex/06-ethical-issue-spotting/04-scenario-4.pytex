@@ -1,0 +1,8 @@
+\item \points{6d}
+
+ Researchers have recently created a machine learning model that can predict plant species automatically directly from a single photo \footnote{\href{https://www.inaturalist.org/blog/31806-a-new-vision-model}{iNaturalist. A new vision model. 2020.}}. The model was trained using photos uploaded to the iNaturalist app by users who consented to use of their photos for research purposes, and the model is only used within the app to help users identify plants they might come across in the wild.\\
+
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_6d(.*?)% <SCPD_SUBMISSION_TAG>_6d', f.read(), re.DOTALL)).group(1))
+🐍

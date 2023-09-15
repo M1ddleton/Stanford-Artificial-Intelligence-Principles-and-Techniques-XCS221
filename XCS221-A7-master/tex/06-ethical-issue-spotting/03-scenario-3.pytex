@@ -1,0 +1,8 @@
+\item \points{6c}
+
+A research group scraped millions of faces of celebrities off of Google images to develop facial recognition technology \footnote{\href{https://www.robots.ox.ac.uk/~vgg/data/vgg_face/}{Parkhi et al. VGG Face Dataset. 2015.}}. The celebrities did not give permission for their images to be used in the dataset and many of the images are copyrighted. For copyrighted photos, the dataset provides URL links to the original image along with bounding boxes for the face.\\
+
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_6c(.*?)% <SCPD_SUBMISSION_TAG>_6c', f.read(), re.DOTALL)).group(1))
+🐍
