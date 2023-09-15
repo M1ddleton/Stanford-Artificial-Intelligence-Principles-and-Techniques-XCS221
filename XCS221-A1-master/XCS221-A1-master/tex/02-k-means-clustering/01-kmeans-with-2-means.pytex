@@ -1,0 +1,18 @@
+\item \points{2a}
+
+Run 2-means on this dataset until convergence. Please show your work. What
+are the final cluster assignments $z$ and cluster centers $\mu$? Run this
+algorithm twice with the following initial centers:
+
+
+\begin{enumerate}
+    \item $\mu_1 = [20, 30]$ and $\mu_2 = [20, -10]$
+    \item $\mu_1 = [0, 10]$ and $\mu_2 = [30, 20]$
+\end{enumerate}
+
+\textbf{What we expect:} Show the cluster centers and assignments for each step.
+
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_2a(.*?)% <SCPD_SUBMISSION_TAG>_2a', f.read(), re.DOTALL)).group(1))
+🐍

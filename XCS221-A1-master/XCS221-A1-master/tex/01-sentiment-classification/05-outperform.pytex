@@ -1,0 +1,28 @@
+\item \points{1e}
+
+Run your linear predictor with feature extractor |extractCharacterFeatures|.
+Experiment with different values of $n$ to see which one produces the smallest
+test error.  You should observe that this error is nearly as small as that
+produced by word features. Why is this the case?
+
+Construct a review (one sentence max) in which character $n$-grams probably
+outperform word features, and briefly explain why this is so.
+
+\textbf{Note:} There is a function in |submission.py| that will allow you 
+to test different values of $n$. See the |Docstring| of |testValuesOfN(n)| how to run it.
+Remember to write your final written solution.
+
+\textbf{What we expect:} 
+\begin{itemize}
+    \item a short paragraph (~4-6 sentences). In the paragraph state which
+value of $n$ produces the smallest validation error, why this is
+likely the value that produces the smallest error.
+
+    \item a one-sentence review and explanation for when character $n$-grams
+            probably outperform word features.
+\end{itemize}
+
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_1e(.*?)% <SCPD_SUBMISSION_TAG>_1e', f.read(), re.DOTALL)).group(1))
+🐍
