@@ -1,0 +1,21 @@
+\item \points{4a}
+
+First, indicate which examples were reconstructed correctly versus incorrectly.
+Recall that the system chooses outputs based on a bigram cost function\footnote{Modulo edge cases, the $n$-gram model score in this assignment is
+  given by $\ell(w_1, \ldots, w_n) = -\log p(w_n \mid w_1, \ldots,
+  w_{n-1})$.  Here, $p(\cdot)$ is an estimate of the conditional
+  probability distribution over words given the sequence of previous
+  $n-1$ words.  This estimate is based on word frequencies
+  in Leo Tolstoy's \textit{War and Peace} and William
+  Shakespeare's \textit{Romeo and Juliet}},
+which is roughly low if a bigram occurred in
+Leo Tolstoy's \textit{War and Peace} and William Shakespeare's \textit{Romeo and Juliet},
+and high if it didn't (the details don't matter for this problem).
+Then, explain what about the training data may have led to this behavior. \\
+
+\textbf{What we expect:} 1-2 sentences listing whether each example was correctly or incorrectly reconstructed  and a brief explanation \underline{with justification} as to what about the training data may have led to this result.
+
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_4a(.*?)% <SCPD_SUBMISSION_TAG>_4a', f.read(), re.DOTALL)).group(1))
+🐍

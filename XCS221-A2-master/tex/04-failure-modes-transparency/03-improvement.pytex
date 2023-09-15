@@ -1,0 +1,11 @@
+\item \points{4c}
+
+Given the limitations found in part (a) and described in your transparency statement from (b), how could you improve your system?\\
+
+\textbf{What we expect:} 2-4 sentences proposing a change to the cost function, how you would implement it,
+    and why it would address the limitations you identified above.
+
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_4c(.*?)% <SCPD_SUBMISSION_TAG>_4c', f.read(), re.DOTALL)).group(1))
+🐍

@@ -1,0 +1,17 @@
+\item \points{4b}
+
+Your system, like all systems, has limitations and potential points of failure. As a responsible AI practitioner, it’s important for you to recognize and communicate these limitations to users of the systems you build. Imagine that you are deploying your search algorithm from this assignment to real users on mobile phones.
+
+Write a \textbf{transparency statement} for your system,
+which communicates to users the conditions under which the system should be
+expected to work and when it might not work.\\
+
+\textbf{What we expect:} 2-4 sentences explaining the potential failure modes of
+your system.  Be sure to acknowledge the limitations that your system has
+and who should know about these limitations (i.e., who are the affected
+parties?).
+
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_4b(.*?)% <SCPD_SUBMISSION_TAG>_4b', f.read(), re.DOTALL)).group(1))
+🐍
