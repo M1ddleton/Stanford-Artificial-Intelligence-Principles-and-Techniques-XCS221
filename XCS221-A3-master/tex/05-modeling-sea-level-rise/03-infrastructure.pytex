@@ -1,0 +1,25 @@
+\item \points{5c}
+
+Not all cities have as consistent weather as L.A. 
+  Imagine instead that you're on the city council for Tampa, Florida - 
+  a city almost as well known for its hurricanes as it is its beaches. 
+  The Tampa city council is making a centennial plan for the city. 
+  Recent climate models indicate that the sea level may rise as much as 200 cm over the next century, with much uncertainty. A friend of yours on L.A city council has recommended using the same MDP from above to help plan your actions. \\
+
+  To adapt the MDP for Tampa, 
+  we need to model an increase in devastating weather events like hurricanes in addition to the steady rise of sea level. You will compare 2 similar setups of the |SeaLevelRiseMDP| where there is a small chance of major disaster every 10 years. 
+  The key difference between these two MDPs is that one \textbf{discounts future rewards} \footnote{\href{https://grist.org/article/discount-rates-a-boring-thing-you-should-know-about-with-otters/}{Discount Rates: a boring thing you should know about.}}, 
+  while the other considers rewards from all states equally. We have already implemented functions with the proper parameters to do this with you; 
+  all you need to do is run grader test |5c-helper-0| to examine the optimal policy for these two MDPs. 
+  Note that the only parameter difference between the two MDPs is the discount factor. 
+  How much infrastructure should you be considering adding in your centennial plan according to the discounted model? 
+  What about for the non-discounted model? Using your understanding of the MDP, why do you think the two MDPs recommended these actions?\\
+
+\textbf{What we expect:} A 1-2 sentence indication of how much infrastructure additions both the discounted and non-discounted MDPs recommend. A 1-2 sentence explanation as to why the different strategies would be recommended by the two MDPs. Note: you do not need to quantify anything, just simply a general explanation of a policy will do. \\
+
+
+% FIX
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_5c(.*?)% <SCPD_SUBMISSION_TAG>_5c', f.read(), re.DOTALL)).group(1))
+🐍

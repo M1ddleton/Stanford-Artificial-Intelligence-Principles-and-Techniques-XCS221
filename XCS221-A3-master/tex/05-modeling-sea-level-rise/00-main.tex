@@ -1,0 +1,32 @@
+\item {\bf Modeling Sea Level Rise}
+
+Sometimes the skills we learn by playing games can serve us well in real life. In this assignment, 
+you’ve created a MDP that can learn an effective policy for Blackjack. Now let’s see how an MDP can help us make decisions in a scenario with much higher stakes: climate change mitigation strategy \footnote{\href{https://proceedings.mlr.press/v119/shuvo20a.html}{Shuvo et al. A Markov Decision Process Model for Socio-Economic Systems Impacted by Climate Change. ICML. 2020.}}. 
+Climate change can cause sea level rise, higher tides, more frequent storms, and other events that can damage a coastal city. 
+Cities want to build infrastructure to protect their citizens, such as seawalls or landscaping that can capture storm surge, but have limited budgets.
+For this problem, we have implemented an MDP |SeaLevelRiseMDP| in |submission.py| that models how a coastal city government adapts to rising sea levels over the course of multiple decades. There are 2 actions available to the government at each timestep: \\
+
+\begin{itemize}
+    \item $a_{Invest}$ - Invest in infrastructure during this budget cycle
+    \item $a_{Wait}$ - Hold off in investing in infrastructure and save your surplus budget
+\end{itemize}
+
+Every simulation starts out in the year \textbf{2000} and with an initial sea level of \textbf{0} (in centimeters). The initial amount of money (in millions of USD), initial amount of infrastructure (unitless), and number of years to run the simulation for are parameters to the model. Every \textbf{10 years}, the city government gets a chance to make an infrastructure decision. If the city government \textit{chooses to invest} in infrastructure for that 10 year cycle, then \textbf{the current infrastructure state is incremented by 3} and \textbf{the current budget decreases by \$2 mil}. If the city government government \textit{chooses to wait} and not invest this cycle, then the infrastructure state remains the same and \textbf{the budget increases by \$2 mil}. Typically, \textbf{no reward is given until the end of the simulation}. However, if discounting is being applied, then at each time step, the \textbf{current budget} is given as reward. \\
+
+However, the budget is not the only thing increasing in our simulation. At each 10 year timestep, the sea level rises by a non-deterministic amount. Specifically, it can \textbf{rise a little (1 cm.), a moderate amount (2 cm.), or a lot (3 cm.)} similar to the IPCC sea level rise projection \footnote{\href{https://sealevel.nasa.gov/data_tools/17}{IPCC. IPCC AR6 Sea Level Projection Tool. IPCC 6th Assessment Report. 2021.}}. A moderate rise in sea level is the most likely at each timestep (50\% probability), but there is some probability a less or more extreme rise could occur (25\% each). Normally, so long as the current sea level below the current infrastructure level, the city can go about business as usual with no punishment. However, if at any point the current sea level surpasses the current infrastructure, then \textbf{the city is immediately flooded}, the simulation ends, and the city incurs a large negative reward, simulating the cost of the city becoming uninhabitable. \\
+
+The threat of sea level is not equal across coastal cities, however. For example, Tampa Bay, FL also experiences hurricanes regularly, and rising sea levels significantly exacerbate the damage caused by these extreme weather events \footnote{\href{https://www.nature.com/articles/s41467-019-11755-z}{Marsooli et al. Climate change exacerbates hurricane flood hazards along US Atlantic and Gulf Coasts in spatially varying patterns. Nature Communications. 2019.}}. In order to better model cities vulnerable to extreme weather events, we can toggle a boolean |disaster|. When |True|, at each time step there is a small possibility that the city is immediately flooded by a natural disaster, which is higher when the sea level is close to the infrastructure level and lower when the sea level is much lower than the infrastructure level. If the city manages to avoid being flooded by the sea until the final year of simulation, then the \textbf{current budget is given as reward} and the simulation is ended. However, if the sea level has overtaken the city's infrastructure in this final year, the city does \textbf{not} receive the reward and receives the same negative reward as before. \\
+
+Using this MDP, you will explore how the optimal policy changes under different scenarios and reason about the strengths and drawbacks of modeling social decisions with machine learning and search. \\
+
+\begin{enumerate}
+
+  \input{05-modeling-sea-level-rise/01-100-year-time-horizon}
+
+  \input{05-modeling-sea-level-rise/02-investment-policy}
+
+  \input{05-modeling-sea-level-rise/03-infrastructure}
+
+  \input{05-modeling-sea-level-rise/04-advice-to-city-council}
+
+\end{enumerate}

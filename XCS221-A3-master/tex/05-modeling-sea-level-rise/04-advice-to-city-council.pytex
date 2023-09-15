@@ -1,0 +1,27 @@
+\item \points{5d}
+
+Finally, remember in question 4d we compared how well (or poorly!) one MDP's optimal policy would transfer to another. If we're no longer quite as good at playing blackjack, that's one thing. However, in  a high-stakes scenario like this, supposedly optimal policies that are in fact suboptimal can have severe consequences that affect the livelihoods and well-being of potentially millions of people. \\
+
+We will now explore what happens when we mis-estimate the cost of climate change. 
+  Imagine you're still on Tampa's city council. 
+  Recently, the city was hit by a small hurricane which flooded a few parts of the outskirts of the city. 
+  The estimated cost of the flooding was -\$10 million. 
+  You decide to run your sea level rise MDP with this as the negative reward and you present the optimal policy to city council, 
+  which decides to use the MDP's policy to set their infrastructure economic agenda for the foreseeable future. \\
+
+  \textbf{Part 1.)} Run |5d-helper-0| to output the expected reward of the optimal policy from ValueIteration running the |SeaLevelRiseMDP| for 100 years with a flooding cost of -\$10 million.\\
+
+  \textbf{Part 2.)} Now, let's imagine that this flooding cost underestimates the cost of flooding by 3 orders of magnitude (read: a flooding cost of -\$10 billion). Next in the output from |5d-helper-0|, you'll find the expected reward of the above fixed optimal policy re-run on an MDP with the more realistic flooding cost.  \\
+  
+  \textbf{Part 3.)} Finally, you will see the list of actions predicted by the optimal policy for the -10 mil. flooding cost MDP and the optimal policy for the -\$10,000 mil. flooding cost MDP. \\
+
+  Given these findings, what do you advise city council to do in regards to their infrastructure economic agenda?\\
+
+\textbf{What we expect:} 1-2 sentences discussing whether or not you think the city council should still use the -\$10 mil. flooding cost MDP to make infrastructure economic decisions. If you think city council should still use the model, provide justification through either the data from |5d-helper-0| or other outside sources. If you think city council should not use the model, suggest an alternate way city council can still safely incorporate the predictions from |SeaLevelRiseMDP| into their economic decisions.
+
+
+% FIX
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_5d(.*?)% <SCPD_SUBMISSION_TAG>_5d', f.read(), re.DOTALL)).group(1))
+🐍

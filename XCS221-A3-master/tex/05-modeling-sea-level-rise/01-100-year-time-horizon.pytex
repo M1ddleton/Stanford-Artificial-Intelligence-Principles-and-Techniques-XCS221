@@ -1,0 +1,11 @@
+\item \points{5a}
+
+Imagine you're on L.A.'s city council and you're interested in understanding how sea level rise will impact the city in the coming years. To do so, you will compare 2 simple setups of the |SeaLevelRiseMDP|: one where the simulation is run for \textbf{40 years} and one where the simulation is run for \textbf{100 years}. We have already implemented functions with the proper parameters to do this with you; all you need to do is run grader test |5a-helper-0| to examine the optimal policy for these two MDPs. Note that the only parameter difference between the two MDPs is \textbf{the number of years to run the simulation for}. Looking at only a 40 year time horizon, interpret the MDP's optimal sequence of actions into the most economical plan for the city government to take. What about for a 100 year time horizon? Using your understanding of the MDPs, why do you think the two MDPs recommended these different economic policies?
+
+\textbf{What we expect:} A 1-2 sentence indication of what series of action/s are economically preferable for both the 40 year horizon MDP and the 100 year horizon MDP. A 1-2 sentence explanation as to why this would be the case. Note: you do not need to write out a full action sequence for the entire simulation - just a general description of what the most economic policy is will suffice. \\
+
+% FIX
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_5a(.*?)% <SCPD_SUBMISSION_TAG>_5a', f.read(), re.DOTALL)).group(1))
+🐍

@@ -1,0 +1,21 @@
+\item \points{5b}
+
+In addition to the economic reasons for choosing one economic plan over another that you just explored, there are ethical considerations as well.  Consider the following  arguments: \\
+
+\begin{itemize}
+\item \textbf{Veil of Ignorance}: Imagine that you did not know what year you would be born and therefore what state of climate change you would be experiencing.  The policy you would choose on that basis would be the fairest policy, as it is the one you would subject yourself to if you did not know what decade you would be born. \footnote{\href{https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1467-9833.2009.01447.x}{Moellendorf et al. Justice and the Assignment of the Intergenerational Costs of Climate Change.}}
+\item \textbf{Uncertain Future}: The future is uncertain. We should not sacrifice present well-being or consumption to ward off a future that might or might not happen.
+\item \textbf{Precautionary Risks}: People have different attitudes towards risk and uncertainty.  Doing nothing now represents a significant risk of degraded living conditions for those who will be alive in the future. Since we do not know the risk-tolerance of future people, we ought to act conservatively on their behalf. \footnote{\href{https://academic.oup.com/monist/article-abstract/102/1/66/5255709}{Buchak et al. Weighing the Risks of Climate Change.}}
+\item \textbf{Symmetry of Future Generations}: People born today and people born in 50 years are equally morally important and deserving of well-being.  Privileging the well-being of our generation would be arbitrary; instead we should give their interests and ours equal consideration.
+\item \textbf{Vulnerability of Future Generations}: The well-being of people in future generations is completely dependent on the environmental choices we make today, yet they have no say in those choices. There is no morally relevant reason why we get to make those choices for them; we just happened to be born earlier. Thus we should give their interests and ours equal consideration. \footnote{\href{https://proceedings.mlr.press/v119/shuvo20a.html}{Shuvo et al. A Markov Decision Process Model for Socio-Economic Systems Impacted by Climate Change. ICML. 2020.}}
+\end{itemize}
+
+Using your answer for 5a, what investment policy would you advocate for the L.A. city government to use to decide its economic agenda for the next 50 years? Support your argument using one of the above ethical considerations, or another one with proper definition and citation.\\
+
+\textbf{What we expect:} 2-3 sentences advocating for predicted economic policy, justified with one of the ethical considerations above (or self-defined, with references). Be sure to explicitly state which MDP you chose and reiterate the optimal investment strategy this MDP suggests. Also be sure to explicitly state which ethical argument you are using in your answer for full credit. \\
+
+% FIX
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% <SCPD_SUBMISSION_TAG>_5b(.*?)% <SCPD_SUBMISSION_TAG>_5b', f.read(), re.DOTALL)).group(1))
+🐍
